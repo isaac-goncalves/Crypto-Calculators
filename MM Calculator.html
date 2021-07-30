@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            calculo()
+            function calculo() {
+                
+                var dolar = $("#dolar").val().replace('$', '').replace('R', '');
+                var cotas = $("#cotas").val();
+                var atual = $("#atual").val().replace('$', '');
+                
+                console.log(atual)
+                
+                const a = document.querySelector('.row-dolar')
+                
+                
+                var b = document.querySelector('.row-cotas')
+                
+                
+                const c = document.querySelector('.row-atual')
+                
+                
+                resultado = (dolar * cotas * atual).toFixed(2)
+                const d = document.querySelector('.valor-final')
+                d.innerHTML = "R$" + resultado
+                
+                console.log(dolar, cotas, atual)
+                if (a.innerHTML != dolar) {
+                    a.innerHTML = "R$" + dolar
+                }
+                if (b.innerHTML != cotas) {
+                    b.innerHTML = cotas
+                }
+                if (c.innerHTML != atual) {
+                    c.innerHTML = "$" + atual
+                }
+               
+                const f = document.querySelector('#atual').value =  "$" + atual
+                const h = document.querySelector('#dolar').value =  "R$" + dolar
+
+            }
+            
+            $("input").keyup(function () {
+                calculo()
+            });
+            
+            
+            
+            
+            
+            
+        });
+
+
+
+    </script>
+
+
+    <style>
+        body {
+            display: flex;
+            background-color: #5B2333;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tudo {
+
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            width: 700px;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: 10px 10px #411924;
+        }
+
+        table {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        form {
+            margin:10px 0px;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(211, 203, 203);
+            padding: 5px;
+
+        }
+
+        table {
+            margin:10px 0px;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+
+            border: 1px solid #7e7e7e;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .valor-final {
+            align-self: center;
+            font-size: 3.5em;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            background-color: wheat;
+            border-radius: 5px;
+            padding: 20px;
+            border: solid 4px rgb(197, 197, 176);
+            box-sizing: border-box;
+            box-shadow: #7e7e7e 5px 5px;
+
+        }
+
+        .titulo {
+            align-self: center;
+            font-size: 2.5em;
+            margin:10px 0px;
+        }
+
+        input {
+            background-color: wheat;
+            width: 100%;
+            font-size: 2em;
+            margin: 0px 10px;
+            text-align: center;
+
+        }
+        
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudo">
+        <h1 class="titulo">MM Calculator</h1>
+        <div>
+            <form>
+                <label for="fname">Dolar:&nbsp;</label><br>
+                <input type="text" id="dolar" name="fname" value="5.08">
+                <label for="lname">Cotas:&nbsp;</label>
+                <input type="text" id="cotas" name="lname" value="13.04279172">
+                <label for="fname">Valor atual:&nbsp;</label>
+                <input type="text" id="atual" name="fname" value="55.99">
+        </div>
+        <table>
+            <tr>
+                <th>Dolar</th>
+                <th>Cotas</th>
+                <th>Valor atual</th>
+            </tr>
+            <tr>
+                <td class="row-dolar"></td>
+                <td class="row-cotas"></td>
+                <td class="row-atual"></td>
+            </tr>
+        </table>
+
+        <h1 class="titulo">Valor Atual em reais</h1><br>
+        <h1 class="valor-final">R$ 0</h1>
+
+        </tr>
+        </form>
+
+
+    </div>
+</body>
+
+
+
+</html>
