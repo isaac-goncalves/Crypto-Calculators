@@ -14,26 +14,26 @@
         $(document).ready(function () {
             calculo()
             function calculo() {
-                
+
                 var dolar = $("#dolar").val().replace('$', '').replace('R', '');
                 var cotas = $("#cotas").val();
                 var atual = $("#atual").val().replace('$', '');
-                
+
                 console.log(atual)
-                
+
                 const a = document.querySelector('.row-dolar')
-                
-                
+
+
                 var b = document.querySelector('.row-cotas')
-                
-                
+
+
                 const c = document.querySelector('.row-atual')
-                
-                
+
+
                 resultado = (dolar * cotas * atual).toFixed(2)
                 const d = document.querySelector('.valor-final')
                 d.innerHTML = "R$" + resultado
-                
+
                 console.log(dolar, cotas, atual)
                 if (a.innerHTML != dolar) {
                     a.innerHTML = "R$" + dolar
@@ -44,21 +44,16 @@
                 if (c.innerHTML != atual) {
                     c.innerHTML = "$" + atual
                 }
-               
-                const f = document.querySelector('#atual').value =  "$" + atual
-                const h = document.querySelector('#dolar').value =  "R$" + dolar
+
+                const f = document.querySelector('#atual').value = "$" + atual
+                const h = document.querySelector('#dolar').value = "R$" + dolar
 
             }
-            
+
             $("input").keyup(function () {
                 calculo()
             });
-            
-            
-            
-            
-            
-            
+
         });
 
 
@@ -69,20 +64,21 @@
     <style>
         body {
             display: flex;
-            background-color: darkblue;
+            background-color: rgb(8, 7, 27);
             justify-content: center;
             font-family: 'Poppins', sans-serif;
+            color: rgb(215, 249, 236);
         }
 
         .tudo {
 
-            background-color: whitesmoke;
+            background-color: rgb(11, 10, 36);
             display: flex;
             flex-direction: column;
             width: 700px;
             margin-top: 30px;
             border-radius: 5px;
-            box-shadow: 10px 10px #411924;
+            box-shadow: 10px 10px rgb(23, 21, 77);
         }
 
         table {
@@ -93,16 +89,16 @@
 
 
         form {
-            margin:10px 0px;
+            margin: 10px 0px;
             display: flex;
             justify-content: center;
-            background-color: rgb(211, 203, 203);
+            background-color: rgb(43, 43, 43);
             padding: 5px;
 
         }
 
         table {
-            margin:10px 0px;
+            margin: 10px 0px;
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
@@ -110,7 +106,6 @@
 
         td,
         th {
-
             border: 1px solid #7e7e7e;
             text-align: left;
             padding: 8px;
@@ -120,15 +115,16 @@
 
         .valor-final {
             align-self: center;
-            font-size: 3.5em;
-            margin-top: 10px;
+            font-size: 2.5em;
+            margin-top: 20px;
             margin-bottom: 40px;
-            background-color: wheat;
+            background-color: rgb(43, 43, 43);
             border-radius: 5px;
-            padding: 20px;
+            padding: 10px;
             border: solid 4px rgb(197, 197, 176);
             box-sizing: border-box;
             box-shadow: #7e7e7e 5px 5px;
+            color: #A0FFDB;
 
         }
 
@@ -138,31 +134,44 @@
         }
 
         input {
-            background-color: wheat;
+            background-color: rgb(16, 17, 61);
             width: 100%;
             font-size: 2em;
             margin: 0px 10px;
             text-align: center;
-
+            color: rgb(215, 249, 236)
         }
-        
+
 
         tr:nth-child(even) {
-            background-color: #dddddd;
+            background-color: rgb(26, 20, 51);
+            border-bottom: 1px solid rgba(143, 134, 235, 0.48);
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+        }
+        .header img {
+            padding: 10px;
+            height: 70px;
         }
     </style>
 </head>
 
 <body>
     <div class="tudo">
-        <h1 class="titulo">ADA Calculator</h1>
+        <div class="header">
+            <img src="./logo/cardano-ada-logo.png" alt="Cardano">
+            <h1 class="titulo">ADA</h1>
+        </div>
         <div>
             <form>
                 <label for="fname">Dolar:&nbsp;</label><br>
                 <input type="text" id="dolar" name="fname" value="5.40">
-                <label for="lname">Cotas:&nbsp;</label>
+                <label for="lname">how many:&nbsp;</label>
                 <input type="text" id="cotas" name="lname" value="221.89577016">
-                <label for="fname">Valor atual:&nbsp;</label>
+                <label for="fname">Value:&nbsp;</label>
                 <input type="text" id="atual" name="fname" value="2.72486">
         </div>
         <table>
@@ -178,7 +187,7 @@
             </tr>
         </table>
 
-        <h1 class="titulo">Valor Atual em reais</h1><br>
+
         <h1 class="valor-final">R$ 0</h1>
 
         </tr>
